@@ -46,7 +46,8 @@ public enum BookEnum {
 
     // ARTISTIC_EXPRESSION
     ARTEFACT,
-    ART
+    ART,
+    WRITING,
 
 
 }
