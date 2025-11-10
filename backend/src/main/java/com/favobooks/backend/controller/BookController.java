@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/")
 public class BookController {
@@ -25,6 +28,11 @@ public class BookController {
     @GetMapping("book/{id}")
     public BookModel getBook(@PathVariable int id) {
         return bookService.getBook(id);
+    }
+
+    @GetMapping("books")
+    public List<BookModel> getBookList(@RequestParam("genre") String genre) {
+        return bookService.getBookList(genre);
     }
 
     @PutMapping("book/{id}")
